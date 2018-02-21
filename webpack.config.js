@@ -167,6 +167,12 @@ module.exports = function makeWebpackConfig() {
           plugins: [autoprefixer]
         }
       }
+    }),
+    new webpack.ProvidePlugin({
+        jQuery: 'jquery',
+        $: 'jquery',
+        jquery: 'jquery',
+        Popper: 'popper.js'
     })
   ];
 

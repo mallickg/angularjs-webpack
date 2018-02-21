@@ -1,9 +1,30 @@
-<main>
-  <h1 class="title">Hello from Angular !</h1>
-
-  <!-- Images (and assets) are parsed and loaded from within the public directory -->
-  <img src="/img/logo.png">
-</main>
-<footer>
-  <a ng-href="{{app.url}}">Webpack Angular Starter</a>
-</footer>
+<div class="container">
+    <table class="table table-striped">
+        <thead>
+            <th>#</th>
+            <th>Team</th>
+            <th>Pts</th>
+            <th>GP</th>
+            <th>W.</th>
+            <th>D.</th>
+            <th>L.</th>
+            <th>GS</th>
+            <th>GA</th>
+            <th>GD</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat="team in app.standing">
+                <td><i class="fa fa-ambulance"></i></td>
+                <td ng-bind="team.team_name"></td>
+                <td ng-bind="team.points"></td>
+                <td ng-bind="team.overall.games_played"></td>
+                <td ng-bind="team.overall.won"></td>
+                <td ng-bind="team.overall.draw"></td>
+                <td ng-bind="team.overall.lost"></td>
+                <td ng-bind="team.overall.goals_scored"></td>
+                <td ng-bind="team.overall.goals_against"></td>
+                <td ng-bind="team.total.goal_difference"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
